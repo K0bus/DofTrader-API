@@ -52,7 +52,7 @@ router.get('/:type/:id', function(req, res) {
     const type = req.params.type;
     const id = req.params.id;
 
-    const r = fs.createReadStream('./DofusDB/scraped/' + version + '/sprites/' + type + '/' + id + '.png') // or any other way to get a readable stream
+    const r = fs.createReadStream('./data/scraped/' + version + '/sprites/' + type + '/' + id + '.png') // or any other way to get a readable stream
     const ps = new PassThrough() // <---- this makes a trick with stream error handling
     pipeline(
         r,

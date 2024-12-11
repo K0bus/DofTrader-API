@@ -53,7 +53,7 @@ router.post('/', function(req, res) {
     const query = req.body.query;
     const page = req.body.page;
     const limit = req.body.limit;
-    fs.readFile('./DofusDB/scraped/' + version + '/i18n_' + lang + '.json', 'utf8', function (err, data) {
+    fs.readFile('./data/scraped/' + version + '/i18n_' + lang + '.json', 'utf8', function (err, data) {
         res.setHeader('Content-Type', 'application/json');
         if (err) {
             console.log(err);
@@ -146,8 +146,8 @@ router.post('/:type', function(req, res) {
     const query = req.body.query;
     const page = req.body.page;
     const limit = req.body.limit;
-    fs.readFile('./DofusDB/scraped/' + version + '/i18n_' + lang + '.json', 'utf8', function (langErr, langData) {
-        fs.readFile('./DofusDB/scraped/' + version + '/' + typeQuery + '.json', 'utf8', function (itemErr, itemData) {
+    fs.readFile('./data/scraped/' + version + '/i18n_' + lang + '.json', 'utf8', function (langErr, langData) {
+        fs.readFile('./data/scraped/' + version + '/' + typeQuery + '.json', 'utf8', function (itemErr, itemData) {
             res.setHeader('Content-Type', 'application/json');
             if (langErr) {
                 console.log(langErr);

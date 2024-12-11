@@ -30,7 +30,7 @@ router.post('/versions', function(req, res) {
     if (beta === undefined) {
         beta = false
     }
-    utils.getDirectories('./DofusDB/scraped/').then(versions => {
+    utils.getDirectories('./data/scraped/').then(versions => {
         res.setHeader('Content-Type', 'application/json');
         res.end(JSON.stringify(versions.filter(e => e !== "common" && (!e.includes('beta') || beta))));
     })
@@ -57,7 +57,7 @@ router.post('/versions', function(req, res) {
  */
 router.get('/:version/databases', function(req, res) {
     const version = req.params.version;
-    readdir('./DofusDB/scraped/' + version + '/', function (err, files) {
+    readdir('./data/scraped/' + version + '/', function (err, files) {
         //handling error
         if (err) {
             return console.log('Unable to scan directory: ' + err);
