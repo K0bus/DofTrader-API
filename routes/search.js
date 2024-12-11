@@ -47,7 +47,7 @@ const router = express.Router({mergeParams: true});
  *       200:
  *         description: Return nameId and text associated
  */
-router.post('/', function(req, res, next) {
+router.post('/', function(req, res) {
     const lang = req.params.lang;
     const version = req.params.version;
     const query = req.body.query;
@@ -139,7 +139,7 @@ router.post('/', function(req, res, next) {
  *       200:
  *         description: Return all items data queried
  */
-router.post('/:type', function(req, res, next) {
+router.post('/:type', function(req, res) {
     const lang = req.params.lang;
     const version = req.params.version;
     const typeQuery = req.params.type;
