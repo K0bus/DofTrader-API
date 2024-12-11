@@ -1,0 +1,17 @@
+{
+  "MULTI": [
+    "TEST_MULTI"
+  ],
+  "MONO": [
+    "TEST_MONO"
+  ],
+  "HARDCORE": [
+    "TEST_HC"
+  ],
+  "PIONNIER_MULTI": [
+    "TEST_PMULTI"
+  ],
+  "PIONNIER_MONO": [
+    "TEST_PMONO"
+  ]
+}
